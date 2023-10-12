@@ -2,6 +2,9 @@ package org.example.functions;
 
 import org.example.commands.AppBotCommand;
 
+import java.util.Random;
+import java.util.random.RandomGenerator;
+
 public class FilterOperations {
     @AppBotCommand(name = "grayScale", description = "greyScale filter",
             showInKeyboard = true)
@@ -31,6 +34,15 @@ public class FilterOperations {
     public static float[] onlyBlue(float[] rgb) {
         rgb[0] = 0;
         rgb[1] = 0;
+        return rgb;
+    }
+
+    @AppBotCommand(name = "someColor", description = "someColorFilter",
+            showInKeyboard = true)
+    public static float[] someColor(float[] rgb) throws InstantiationException, IllegalAccessException {
+        /*rgb[0] = Random.class.newInstance().nextInt(0, 2);*/
+        /*rgb[1] = Random.class.newInstance().nextInt(0, 2);*/
+        rgb[2] = Random.class.newInstance().nextInt(0, 2);
         return rgb;
     }
 }

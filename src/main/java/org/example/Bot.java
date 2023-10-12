@@ -233,5 +233,3 @@ public class Bot extends TelegramLongPollingBot {
         return sendMessage;
     }
 }
-
-
